@@ -8,7 +8,7 @@ built as a single-page site in [Claude Design](https://claude.ai/design).
 | Path | Purpose |
 | --- | --- |
 | `AOSIS Mont Kiara.dc.html` | Source of truth — the Claude Design document. Edit this. |
-| `index.html` | Byte-identical copy of the above, served as the site entry point. |
+| `index.html` | Self-contained standalone export of the latest design (all images bundled inline). This is what the live site serves. |
 | `support.js` | Generated Claude Design runtime. Do not edit by hand. |
 | `assets/plan-*.png` | Floor plan drawings (Types A–D, including the Type D dual-key layout). |
 | `assets/web/*.jpg` | Photography and renders for the hero, facilities, interiors and site plan. |
@@ -33,13 +33,11 @@ restrict `file://` requests.
 
 ## Editing
 
-Make changes in the Claude Design project, re-export, and replace
-`AOSIS Mont Kiara.dc.html` plus any changed assets. Remember to re-copy the design
-file over `index.html` so the two stay in sync:
+Make changes in the Claude Design project, export a standalone HTML, and replace
+`index.html` with it. Pushing to `main` redeploys the site on Vercel.
 
-```bash
-cp "AOSIS Mont Kiara.dc.html" index.html
-```
+Note: `AOSIS Mont Kiara.dc.html` and `assets/` are from an earlier export and may lag
+behind `index.html`.
 
 ## Notes
 
